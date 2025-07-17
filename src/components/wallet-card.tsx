@@ -133,12 +133,15 @@ export function WalletCard({ wallet, onOpenDetails }: WalletCardProps) {
                             </DialogHeader>
 
                             {/* Evidence gallery */}
-                            {wallet.evidence_paths?.length ? (
-                                <div className="mt-4 space-y-2">
-                                    <h4 className="text-sm font-medium">Evidence</h4>
-                                    {/* <EvidenceThumbs paths={wallet.evidence_paths} /> */}
-                                </div>
-                            ) : null}
+                            {(() => {
+                                const ev = getEvidencePaths(wallet.evidence_paths as any);
+                                return ev.length ? (
+                                    <div className="mt-4 space-y-2">
+                                        <h4 className="text-sm font-medium">Evidence</h4>
+                                        <EvidencePathsList paths={ev} />
+                                    </div>
+                                ) : null;
+                            })()}
 
                             <DialogFooter className="mt-2 flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                                 <div className="text-xs text-muted-foreground">
@@ -172,18 +175,18 @@ export function WalletCard({ wallet, onOpenDetails }: WalletCardProps) {
 
 function detailFeatures(wallet: Wallet) {
     return [
-      { key: "solpay", label: "Solana Pay QR", value: wallet.solana_pay_qr, icon: <IconQrcode className="h-6 w-6" /> },
-      { key: "dex", label: "DEX Swap", value: wallet.dex_swap, icon: <IconTransfer className="h-6 w-6" /> },
-      { key: "nft", label: "NFT Gallery", value: wallet.nft_gallery, icon: <IconUserCircle className="h-6 w-6" /> },
-      { key: "staking", label: "Staking", value: wallet.staking, icon: <IconStackFront className="h-6 w-6" /> },
-      { key: "fiat_on", label: "Fiat On-Ramp", value: wallet.fiat_on, icon: <IconCreditCard className="h-6 w-6" /> },
-      { key: "fiat_off", label: "Fiat Off-Ramp", value: wallet.fiat_off, icon: <IconCreditCard className="h-6 w-6" /> },
-      { key: "push", label: "Push Notifications", value: wallet.push_notifications, icon: <IconBell className="h-6 w-6" /> },
-      { key: "multi", label: "Multi-Chain", value: wallet.multi_chain ? "yes" : "no", icon: <IconShare className="h-6 w-6" /> },
+        { key: "solpay", label: "Solana Pay QR", value: wallet.solana_pay_qr, icon: <IconQrcode className="h-6 w-6" /> },
+        { key: "dex", label: "DEX Swap", value: wallet.dex_swap, icon: <IconTransfer className="h-6 w-6" /> },
+        { key: "nft", label: "NFT Gallery", value: wallet.nft_gallery, icon: <IconUserCircle className="h-6 w-6" /> },
+        { key: "staking", label: "Staking", value: wallet.staking, icon: <IconStackFront className="h-6 w-6" /> },
+        { key: "fiat_on", label: "Fiat On-Ramp", value: wallet.fiat_on, icon: <IconCreditCard className="h-6 w-6" /> },
+        { key: "fiat_off", label: "Fiat Off-Ramp", value: wallet.fiat_off, icon: <IconCreditCard className="h-6 w-6" /> },
+        { key: "push", label: "Push Notifications", value: wallet.push_notifications, icon: <IconBell className="h-6 w-6" /> },
+        { key: "multi", label: "Multi-Chain", value: wallet.multi_chain ? "yes" : "no", icon: <IconShare className="h-6 w-6" /> },
     ];
-  }
-  
-  function normalizeValue(v: boolean | string): "yes" | "partial" | "no" | "untested" {
+}
+
+function normalizeValue(v: boolean | string): "yes" | "partial" | "no" | "untested" {
     if (v === true) return "yes";
     if (v === false) return "no";
     if (!v) return "untested";
@@ -193,50 +196,50 @@ function detailFeatures(wallet: Wallet) {
     if (s.startsWith("no")) return "no";
     if (s === "untested") return "untested";
     return "untested";
-  }
-  
-  function FeatureValueBadge({ value }: { value: boolean | string }) {
+}
+
+function FeatureValueBadge({ value }: { value: boolean | string }) {
     const norm = normalizeValue(value);
     let cls = "", icon = null, txt = "";
     switch (norm) {
-      case "yes":
-        cls = "bg-emerald-500/15 text-emerald-500";
-        icon = <Check className="h-4 w-4" />;
-        txt = "Yes";
-        break;
-      case "partial":
-        cls = "bg-amber-500/15 text-amber-500";
-        icon = <Minus className="h-4 w-4" />;
-        txt = "Partial";
-        break;
-      case "no":
-        cls = "bg-rose-500/15 text-rose-500";
-        icon = <X className="h-4 w-4" />;
-        txt = "No";
-        break;
-      default:
-        cls = "bg-muted text-muted-foreground";
-        icon = <Minus className="h-4 w-4 opacity-50" />;
-        txt = "—";
+        case "yes":
+            cls = "bg-emerald-500/15 text-emerald-500";
+            icon = <Check className="h-4 w-4" />;
+            txt = "Yes";
+            break;
+        case "partial":
+            cls = "bg-amber-500/15 text-amber-500";
+            icon = <Minus className="h-4 w-4" />;
+            txt = "Partial";
+            break;
+        case "no":
+            cls = "bg-rose-500/15 text-rose-500";
+            icon = <X className="h-4 w-4" />;
+            txt = "No";
+            break;
+        default:
+            cls = "bg-muted text-muted-foreground";
+            icon = <Minus className="h-4 w-4 opacity-50" />;
+            txt = "—";
     }
     return (
-      <span
-        className={cn(
-          "ml-1 inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-medium",
-          cls
-        )}
-      >
-        {icon}
-        {txt}
-      </span>
+        <span
+            className={cn(
+                "ml-1 inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-medium",
+                cls
+            )}
+        >
+            {icon}
+            {txt}
+        </span>
     );
-  }
+}
 
-  function fiatValue(on?: string, off?: string): "yes" | "partial" | "no" | "untested" {
+function fiatValue(on?: string, off?: string): "yes" | "partial" | "no" | "untested" {
     const o = normalizeValue(on as boolean | string);
     const f = normalizeValue(off as boolean | string);
     if (o === "yes" && f === "yes") return "yes";
-    if (o === "no" && f === "no") return "no";  
+    if (o === "no" && f === "no") return "no";
     // any mix / partial -> partial
     if (o === "untested" && f === "untested") return "untested";
     return "partial";
@@ -282,7 +285,7 @@ function FeatureBadgesRow({ wallet }: { wallet: Wallet }) {
     const nft = normalizeValue(wallet.nft_gallery as boolean | string);
     const stk = normalizeValue(wallet.staking as boolean | string);
     const fiat = fiatValue(wallet.fiat_on, wallet.fiat_off);
-    const push = normalizeValue(wallet.push_notifications as boolean | string); 
+    const push = normalizeValue(wallet.push_notifications as boolean | string);
     const multi = wallet.multi_chain ? "yes" : "no";
 
     return (
@@ -295,4 +298,34 @@ function FeatureBadgesRow({ wallet }: { wallet: Wallet }) {
             <FeatureBadge label="Multi" value={multi} />
         </div>
     );
+}
+
+
+function EvidencePathsList({ paths }: { paths: string[] }) {
+    if (!paths.length) return null;
+    return (
+        <ul className="mt-1 space-y-1 text-xs text-primary break-all">
+            {paths.map((p) => (
+                <li key={p}>
+                    <a
+                        href={p}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-2 hover:no-underline"
+                    >
+                        {p}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
+function getEvidencePaths(raw?: string[] | string): string[] {
+    if (!raw) return [];
+    if (Array.isArray(raw)) return raw.filter(Boolean);
+    return raw
+        .split("|")
+        .map((s) => s.trim())
+        .filter(Boolean);
 }
