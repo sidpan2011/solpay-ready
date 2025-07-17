@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](#contributing)
+[![Vercel Deploy](https://img.shields.io/badge/deploy-vercel-black?logo=vercel)](https://solpay-ready.vercel.app/)
 
-## Getting Started
+# SOLPAY Ready
+**Which wallets actually work at Solana checkout?**  
+Open, filterable index of Solana wallets with **Solana Pay QR** compatibility and key commerce features.
 
-First, run the development server:
+![Sol Pay Ready](https://github.com/user-attachments/assets/743c47eb-38da-41d2-9623-092930aa7c78)
 
+## Why
+Wallet fragmentation = checkout failures. SolPay Ready gives builders & merchants a single source of truth: which wallets parse Solana Pay URIs, which only do addresses, and which support real-world features (swap, staking, fiat ramps, push, etc.).
+
+
+## What’s Inside
+- **Gallery Cards** – quick status (Yes / Partial / No / Untested)
+- **Compare Table** – feature matrix across all wallets
+- **Filters & Search** – platform, custody, features, verified
+- **CSV / JSON Export** – reuse the data anywhere
+- **Detail Modal** – full notes + test evidence
+
+## Data Source
+Canonical data lives in **`data/wallets.csv`**.  
+App builds a normalized **`wallets.json`** + downloadable exports.
+
+**Status Legend**
+| Value | Meaning |
+|---|---|
+| **Yes** | Parses Solana Pay QR & sends reliably. |
+| **Partial** | Works w/ caveats (SOL only, ignores token params, extra steps). |
+| **No** | No Solana Pay QR flow (address send only / fails). |
+| **Untested** | Not yet confirmed.
+
+## 🔧 Quick Dev (npm)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install            # install deps
+npm run build:data     # validate CSV, generate JSON, copy exports
+npm run dev            # start local dev (http://localhost:3000)
+
+# production build
+npm run build          # runs build:data + next build (check package.json)
+npm start              # start production server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**CSV schema:**
+```bash
+wallet_name,slug,categories,platforms,custody_model,solana_pay_qr,solana_pay_score,solana_pay_notes,dex_swap,nft_gallery,staking,fiat_on,fiat_off,push_notifications,multi_chain,tested_version,tested_date,tested_by,verified,evidence_paths
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Lists: pipe-delimited (ios|android|chrome).
+- Feature values: yes / partial / no (or yes:jupiter).
+- Dates: YYYY-MM-DD.
+- verified: true only if you personally tested.
+- Evidence: public/evidence/[slug]/file.png|....
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Update the Data
+- Edit data/wallets.csv.
+- Run npm run build:data.
+- Commit & open PR.
 
-## Learn More
+**Contributions welcome—PRs open!**
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
