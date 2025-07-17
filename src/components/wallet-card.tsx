@@ -300,23 +300,38 @@ function FeatureBadgesRow({ wallet }: { wallet: Wallet }) {
     );
 }
 
+function evidenceUrl(p: string): string {
+    // remove any leading ./ or public/
+    let clean = p.trim().replace(/^\.?\/*/, "");        // drop leading ./ or /
+    clean = clean.replace(/^public\//, "");             // drop public/
+    return "/" + clean;                                 // root-relative
+}
+
+function evidenceLabel(p: string): string {
+    // Show shorter label (filename) – change if you prefer full path
+    return p.split("/").pop() ?? p;
+}
 
 function EvidencePathsList({ paths }: { paths: string[] }) {
     if (!paths.length) return null;
     return (
-        <ul className="mt-1 space-y-1 text-xs text-primary break-all">
-            {paths.map((p) => (
-                <li key={p}>
-                    <a
-                        href={p}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-2 hover:no-underline"
-                    >
-                        {p}
-                    </a>
-                </li>
-            ))}
+        <ul className="mt-1 space-y-1 break-all text-xs">
+            {paths.map((p) => {
+                const url = evidenceUrl(p);
+                const label = evidenceLabel(p);
+                return (
+                    <li key={p}>
+                        <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline underline-offset-2 text-primary hover:no-underline"
+                        >
+                            {label}
+                        </a>
+                    </li>
+                );
+            })}
         </ul>
     );
 }

@@ -16,6 +16,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sol Pay Ready",
   description: "Live compatibility index showing which wallets actually work with Solana Pay checkout.",
+  openGraph: {
+    title: "Sol Pay Ready",
+    description: "Live compatibility index showing which wallets actually work with Solana Pay checkout.",
+    images: ["/og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sol Pay Ready",
+    description: "Live compatibility index showing which wallets actually work with Solana Pay checkout.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
