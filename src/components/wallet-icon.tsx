@@ -12,7 +12,7 @@ export function WalletIcon({ wallet }: WalletIconProps) {
             alt={wallet.wallet_name}
             width={44}
             height={44}
-            className="shrink-0 rounded bg-muted"
+            className="shrink-0 rounded bg-transparent"
         />
     );
 }

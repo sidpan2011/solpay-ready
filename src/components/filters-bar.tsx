@@ -24,7 +24,7 @@ export function FiltersBar({ filters, onChange }: FiltersBarProps) {
     return (
         <div className="flex flex-wrap px-2 w-full items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-4">
-                <p className="text-sm font-medium">Solana Pay Status</p><StatusSelect value={filters.status} onChange={setStatus} />
+                <p className="text-sm font-medium">Solana Pay QR Status</p><StatusSelect value={filters.status} onChange={setStatus} />
 
                 <MultiSelect
                     label="Platforms"

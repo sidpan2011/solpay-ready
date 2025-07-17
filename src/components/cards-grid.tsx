@@ -12,7 +12,7 @@ export default function CardsGrid({ wallets, onOpenDetails, className }: CardsGr
     return (
         <div
             className={cn(
-                "grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4",
+                "grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3",
                 className
             )}
         >

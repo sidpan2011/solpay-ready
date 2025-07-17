@@ -12,7 +12,7 @@ interface StatusSelectProps {
 export function StatusSelect({ value, onChange }: StatusSelectProps) {
     return (
         <Select value={value} onValueChange={(v) => onChange(v as any)}>
-            <SelectTrigger size="sm" className="w-[160px]">
+            <SelectTrigger size="sm" className="w-[130px]">
                 <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent className="bg-background">

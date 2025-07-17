@@ -5,23 +5,23 @@ export function CustodyBadge({ custody }: { custody: string | null }) {
   const map: Record<string, { label: string; cls: string }> = {
     self: {
       label: "Self-custody",
-      cls: "bg-emerald-500/15 text-emerald-400",
+      cls: "bg-blue-500/15 text-blue-600",
     },
     custodial: {
       label: "Custodial",
-      cls: "bg-amber-500/15 text-amber-400",
+      cls: "bg-amber-500/10 text-amber-600",
     },
     mpc: {
       label: "MPC",
-      cls: "bg-sky-500/15 text-sky-400",
+      cls: "bg-sky-500/15 text-sky-600",
     },
     hybrid: {
       label: "Hybrid",
-      cls: "bg-purple-500/15 text-purple-400",
+      cls: "bg-purple-500/15 text-purple-600",
     },
     hardware: {
       label: "Hardware",
-      cls: "bg-blue-500/15 text-blue-400",
+      cls: "bg-neutral-500/15 dark:text-neutral-400 text-neutral-600",
     },
   };
   const item = map[custody] ?? { label: custody, cls: "bg-muted text-muted-foreground" };
