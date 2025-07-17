@@ -1,0 +1,412 @@
+{
+  "meta": {
+    "counts": {
+      "untested": 17
+    },
+    "total": 17,
+    "last_updated": "2025-07-17T07:47:45.482Z"
+  },
+  "wallets": [
+    {
+      "wallet_name": "Phantom",
+      "slug": "phantom",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "chrome",
+        "firefox"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "no",
+      "staking": "yes",
+      "fiat_on": "no",
+      "fiat_off": "yes",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Solflare",
+      "slug": "solflare",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "chrome",
+        "firefox"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "yes",
+      "fiat_on": "yes",
+      "fiat_off": "yes",
+      "push_notifications": "false",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Backpack",
+      "slug": "backpack",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "chrome"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "partial",
+      "staking": "yes",
+      "fiat_on": "no",
+      "fiat_off": "yes",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Jupiter Wallet",
+      "slug": "jupiter",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "chrome",
+        "firefox"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes:jupiter",
+      "nft_gallery": "no",
+      "staking": "no",
+      "fiat_on": "yes",
+      "fiat_off": "no",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Glow",
+      "slug": "glow",
+      "categories": [
+        "mobile"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "no",
+      "fiat_on": "no",
+      "fiat_off": "no",
+      "push_notifications": "false",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Bitget Wallet",
+      "slug": "bitget",
+      "categories": [
+        "mobile"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "custody_model": "custodial",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "yes",
+      "fiat_on": "yes",
+      "fiat_off": "yes",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "OKX Wallet",
+      "slug": "okx",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "chrome"
+      ],
+      "custody_model": "custodial",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "yes",
+      "fiat_on": "yes",
+      "fiat_off": "yes",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Decaf",
+      "slug": "decaf",
+      "categories": [
+        "mobile"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "custody_model": "custodial",
+      "solana_pay_qr": "untested",
+      "dex_swap": "no",
+      "nft_gallery": "yes",
+      "staking": "yes",
+      "fiat_on": "no",
+      "fiat_off": "no",
+      "push_notifications": "false",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Para",
+      "slug": "para",
+      "categories": [
+        "extension"
+      ],
+      "platforms": [
+        "chrome",
+        "firefox"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "no",
+      "nft_gallery": "no",
+      "staking": "no",
+      "fiat_on": "no",
+      "fiat_off": "yes",
+      "push_notifications": "false",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Exodus",
+      "slug": "exodus",
+      "categories": [
+        "mobile",
+        "desktop"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "yes",
+      "fiat_on": "yes",
+      "fiat_off": "yes",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "TokenPocket",
+      "slug": "tokenpocket",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "chrome",
+        "firefox"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "no",
+      "fiat_on": "yes",
+      "fiat_off": "yes",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Coinbase Wallet",
+      "slug": "coinbase",
+      "categories": [
+        "mobile",
+        "extension"
+      ],
+      "platforms": [
+        "ios",
+        "android",
+        "chrome",
+        "firefox"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "yes",
+      "staking": "no",
+      "fiat_on": "yes",
+      "fiat_off": "no",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Trust Wallet",
+      "slug": "trust",
+      "categories": [
+        "mobile"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "yes",
+      "nft_gallery": "partial",
+      "staking": "no",
+      "fiat_on": "yes",
+      "fiat_off": "no",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Slope",
+      "slug": "slope",
+      "categories": [
+        "mobile"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "custody_model": "self",
+      "solana_pay_qr": "untested",
+      "dex_swap": "no",
+      "nft_gallery": "no",
+      "staking": "no",
+      "fiat_on": "no",
+      "fiat_off": "no",
+      "push_notifications": "false",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Tangem",
+      "slug": "tangem",
+      "categories": [
+        "hardware"
+      ],
+      "platforms": [
+        "hardware"
+      ],
+      "custody_model": "hardware",
+      "solana_pay_qr": "untested",
+      "dex_swap": "no",
+      "nft_gallery": "no",
+      "staking": "no",
+      "fiat_on": "no",
+      "fiat_off": "no",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "Ledger Live",
+      "slug": "ledger",
+      "categories": [
+        "hardware",
+        "desktop"
+      ],
+      "platforms": [
+        "hardware",
+        "ios",
+        "android",
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "custody_model": "hardware",
+      "solana_pay_qr": "untested",
+      "dex_swap": "no",
+      "nft_gallery": "yes",
+      "staking": "yes",
+      "fiat_on": "no",
+      "fiat_off": "no",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    },
+    {
+      "wallet_name": "SafePal",
+      "slug": "safepal",
+      "categories": [
+        "hardware",
+        "mobile"
+      ],
+      "platforms": [
+        "hardware",
+        "ios",
+        "android"
+      ],
+      "custody_model": "hardware",
+      "solana_pay_qr": "untested",
+      "dex_swap": "no",
+      "nft_gallery": "no",
+      "staking": "no",
+      "fiat_on": "no",
+      "fiat_off": "no",
+      "push_notifications": "true",
+      "tested_by": "false",
+      "verified": false,
+      "evidence_paths": []
+    }
+  ]
+}
