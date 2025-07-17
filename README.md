@@ -2,24 +2,24 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](#contributing)
 [![Vercel Deploy](https://img.shields.io/badge/deploy-vercel-black?logo=vercel)](https://solpay-ready.vercel.app/)
 
-# SolPay Ready
+# SOLPAY Ready
 **Which wallets actually work at Solana checkout?**  
 Open, filterable index of Solana wallets with **Solana Pay QR** compatibility and key commerce features.
 
-![SolPay Ready screenshot](public/social/og.png)
+![Sol Pay Ready](https://github.com/user-attachments/assets/743c47eb-38da-41d2-9623-092930aa7c78)
 
-## 💡 Why
+## Why
 Wallet fragmentation = checkout failures. SolPay Ready gives builders & merchants a single source of truth: which wallets parse Solana Pay URIs, which only do addresses, and which support real-world features (swap, staking, fiat ramps, push, etc.).
 
 
-## 🧭 What’s Inside
+## What’s Inside
 - **Gallery Cards** – quick status (Yes / Partial / No / Untested)
 - **Compare Table** – feature matrix across all wallets
 - **Filters & Search** – platform, custody, features, verified
 - **CSV / JSON Export** – reuse the data anywhere
 - **Detail Modal** – full notes + test evidence
 
-## 📊 Data Source
+## Data Source
 Canonical data lives in **`data/wallets.csv`**.  
 App builds a normalized **`wallets.json`** + downloadable exports.
 
