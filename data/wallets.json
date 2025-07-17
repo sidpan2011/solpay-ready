@@ -7,7 +7,7 @@
       "untested": 1
     },
     "total": 17,
-    "last_updated": "2025-07-17T20:47:26.899Z"
+    "last_updated": "2025-07-17T21:05:55.350Z"
   },
   "wallets": [
     {
@@ -88,7 +88,7 @@
       "solana_pay_notes": "No Solana Pay QR; address send only.",
       "dex_swap": "yes",
       "nft_gallery": "no",
-      "staking": "no",
+      "staking": "yes",
       "fiat_on": "yes",
       "fiat_off": "no",
       "push_notifications": "yes",
