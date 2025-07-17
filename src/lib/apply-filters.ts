@@ -26,7 +26,13 @@ export function applyFilters(
     // --- platform ---
     if (filters.platforms.size) {
       // include wallet if it has ANY selected platform
-      const has = w.platforms.some((p) => filters.platforms.has(p));
+      const has = w.platforms.some((p) => {
+        // Map individual desktop platforms to "desktop" filter
+        if (filters.platforms.has("desktop")) {
+          return p === "desktop" || p === "windows" || p === "mac" || p === "linux";
+        }
+        return filters.platforms.has(p);
+      });
       if (!has) return false;
     }
 
@@ -42,9 +48,6 @@ export function applyFilters(
       }
     }
 
-    // --- verified only ---
-    if (filters.custody.size && !w.verified) return false;
-
     return true;
   });
 }
@@ -53,11 +56,11 @@ function featureMatch(w: Wallet, key: string): boolean {
   switch (key) {
     case "dex": return hasYes(w.dex_swap);
     case "nft": return hasYes(w.nft_gallery);
-    case "stake": return hasYes(w.staking);
-    case "fiat": return hasYes(w.fiat_on) || hasYes(w.fiat_off);
+    case "staking": return hasYes(w.staking);
+    case "fiatOn": return hasYes(w.fiat_on);
+    case "fiatOff": return hasYes(w.fiat_off);
     case "push": return hasYes(w.push_notifications);
-    case "multi": return !!w.multi_chain;
-    case "solpay": return w.solana_pay_qr === "yes" || w.solana_pay_qr === "partial";
+    case "multiChain": return !!w.multi_chain;
     default: return false;
   }
 }

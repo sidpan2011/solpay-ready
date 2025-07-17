@@ -10,11 +10,10 @@ interface ViewTabsProps {
 export function ViewTabs({ view, setView, className }: ViewTabsProps) {
   return (
     <Tabs value={view} onValueChange={(v) => setView(v as any)} className={className}>
-      <TabsList className="h-8 w-fit gap-1 rounded-md border bg-transparent p-0">
+      <TabsList>
         <TabsTrigger
           value="gallery"
           aria-label="Gallery view"
-          className="h-8 w-8 p-0 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
         >
           <IconLayoutGrid className="h-4 w-4" />
           <span className="sr-only">Gallery</span>
@@ -22,7 +21,6 @@ export function ViewTabs({ view, setView, className }: ViewTabsProps) {
         <TabsTrigger
           value="table"
           aria-label="Table view"
-          className="h-8 w-8 p-0 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
         >
           <IconColumns className="h-4 w-4" />
           <span className="sr-only">Table</span>

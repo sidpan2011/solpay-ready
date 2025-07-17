@@ -19,7 +19,11 @@ export default function Dashboard() {
     const [view, setView] = useState<"table" | "gallery">("gallery");
     const [search, setSearch] = useState<string>("");
     const filteredWallets = applyFilters(wallets, filters, search);
-    const hasFilters = Object.keys(filters).some(key => filters[key as keyof FiltersState] !== createDefaultFilters()[key as keyof FiltersState]);
+    const hasFilters = 
+        filters.status !== "all" ||
+        filters.platforms.size > 0 ||
+        filters.custody.size > 0 ||
+        filters.features.size > 0;
     const hasResults = filteredWallets.length > 0;
 
     const handleClearFilters = () => {
@@ -47,12 +51,18 @@ export default function Dashboard() {
                 </div>
                 <div className="flex items-center gap-2">
 
-                    <Button size={"sm"} variant={"ghost"} className="w-fit" onClick={() => exportWalletsCsv(wallets, "solpay-ready.csv", { bom: true })}>
+                    <Button size={"sm"} variant={"ghost"} className="w-fit text-xs" onClick={() => exportWalletsCsv(wallets, "solpay-ready.csv", { bom: true })}>
                         <IconDownload />
                         Export CSV
                     </Button>
                 </div>
             </div>
+            {
+                hasResults && <div className="flex items-center gap-1">
+                    <p className="text-sm text-muted-foreground px-2">Showing {filteredWallets.length} wallets</p>
+                    {hasFilters && <Button size={"sm"} variant={"ghost"} className="w-fit text-xs" onClick={() => handleClearFilters()}>Clear Filters</Button>}
+                </div>
+            }
             <main className="mt-4 min-h-screen px-2 overflow-y-auto z-0">
                 {
                     hasResults
