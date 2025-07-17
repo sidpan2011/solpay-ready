@@ -47,6 +47,12 @@ npm start              # start production server
 wallet_name,slug,categories,platforms,custody_model,solana_pay_qr,solana_pay_score,solana_pay_notes,dex_swap,nft_gallery,staking,fiat_on,fiat_off,push_notifications,multi_chain,tested_version,tested_date,tested_by,verified,evidence_paths
 ```
 
+- Lists: pipe-delimited (ios|android|chrome).
+- Feature values: yes / partial / no (or yes:jupiter).
+- Dates: YYYY-MM-DD.
+- verified: true only if you personally tested.
+- Evidence: public/evidence/[slug]/file.png|....
+
 ## Update the Data
 - Edit data/wallets.csv.
 - Run npm run build:data.
