@@ -7,7 +7,7 @@
       "untested": 1
     },
     "total": 17,
-    "last_updated": "2025-07-17T15:28:41.292Z"
+    "last_updated": "2025-07-17T20:47:26.899Z"
   },
   "wallets": [
     {
@@ -25,7 +25,7 @@
       ],
       "custody_model": "self",
       "solana_pay_qr": "partial",
-      "solana_pay_notes": "QR works for SOL; limited token & invoice support.",
+      "solana_pay_notes": "QR works for SOL; limited token & invoice support. [DEX swap iOS]",
       "dex_swap": "yes",
       "nft_gallery": "yes",
       "staking": "no",
@@ -36,8 +36,11 @@
       "tested_version": "24.1.5",
       "tested_date": "2025-07-10",
       "tested_by": "Community Notion",
-      "verified": false,
-      "evidence_paths": []
+      "verified": true,
+      "evidence_paths": [
+        "public/evidence/phantom/ios/swap-quote.png",
+        "public/evidence/phantom/ios/swap-success.png"
+      ]
     },
     {
       "wallet_name": "Solflare",
@@ -93,8 +96,12 @@
       "tested_version": "1.5.2",
       "tested_date": "2025-07-10",
       "tested_by": "Community Notion",
-      "verified": false,
-      "evidence_paths": []
+      "verified": true,
+      "evidence_paths": [
+        "public/evidence/backpack/extension/stake-quote.png",
+        "public/evidence/backpack/extension/stake-approve.png",
+        "public/evidence/backpack/extension/stake-success.png"
+      ]
     },
     {
       "wallet_name": "Jupiter Wallet",
