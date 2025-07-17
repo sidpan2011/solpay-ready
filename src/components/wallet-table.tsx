@@ -128,10 +128,7 @@ function WalletRow({ wallet, onOpenDetails }: WalletRowProps) {
             {/* Verified */}
             <TableCell className="py-3 text-center">
                 {wallet.verified ? (
-                    <ShieldCheck
-                        className="mx-auto h-4 w-4 text-emerald-500"
-                        aria-label="Verified"
-                    />
+                    "✅"
                 ) : (
                     <span className="text-muted-foreground text-xs">—</span>
                 )}

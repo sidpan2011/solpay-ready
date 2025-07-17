@@ -304,6 +304,19 @@ function evidenceUrl(p: string): string {
     // remove any leading ./ or public/
     let clean = p.trim().replace(/^\.?\/*/, "");        // drop leading ./ or /
     clean = clean.replace(/^public\//, "");             // drop public/
+    
+    // Handle case-insensitive file extension matching
+    // Phantom files have .PNG extension, backpack files have .png
+    if (clean.toLowerCase().endsWith('.png')) {
+        const basePath = clean.substring(0, clean.lastIndexOf('.'));
+        // Check if it's a phantom file (which has .PNG extension)
+        if (clean.includes('/phantom/')) {
+            return `/${basePath}.PNG`;
+        }
+        // For other files, use lowercase .png
+        return `/${basePath}.png`;
+    }
+    
     return "/" + clean;                                 // root-relative
 }
 
