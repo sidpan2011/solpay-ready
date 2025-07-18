@@ -35,14 +35,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID);
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <OpenPanelComponent
-          clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID!}
+          clientId={process.env.OPENPANEL_CLIENT_ID!}
           trackScreenViews={true}
           trackAttributes={true}
           trackOutgoingLinks={true}
