@@ -20,14 +20,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sol Pay Ready",
     description: "Live compatibility index showing which wallets actually work with Solana Pay checkout.",
-    images: ["/og.png"],
+    images: ["/solpay-og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sol Pay Ready",
     description: "Live compatibility index showing which wallets actually work with Solana Pay checkout.",
-    images: ["/og.png"],
+    images: ["/solpay-og.png"],
   },
+  keywords: ["solana", "solpay ready", "solana pay", "solana pay ready", "solana pay compatible", "solana pay compatible wallets", "solana pay compatible wallets list", "solana pay compatible wallets list 2025",]
 };
 
 export default function RootLayout({

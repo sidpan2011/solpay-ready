@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto">
                 <div className=" text-center">
                     {/* <Logo /> */}
-                    <p className="text-sm font-medium text-muted-foreground">Built & maintained by  <Link href="https://x.com/sidhanthpande" target="_blank" className="text-violet-400 hover:underline">@sidhanthpande</Link></p>
+                    <p className="text-sm font-medium text-muted-foreground">Built by  <Link href="https://x.com/sidhanthpande" target="_blank" className="text-violet-400 hover:underline">@sidhanthpande</Link></p>
                 </div>
             </div>
         </footer>

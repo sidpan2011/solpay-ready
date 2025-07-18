@@ -136,7 +136,7 @@ export function WalletCard({ wallet, onOpenDetails }: WalletCardProps) {
                             {(() => {
                                 const ev = getEvidencePaths(wallet.evidence_paths as any);
                                 return ev.length ? (
-                                    <div className="mt-4 space-y-2">
+                                    <div className="space-y-2">
                                         <h4 className="text-sm font-medium">Evidence</h4>
                                         <EvidencePathsList paths={ev} />
                                     </div>
