@@ -12,7 +12,7 @@ export function NoResults({ search, hasFilters, onClearFilters }: NoResultsProps
       <p className="text-lg font-medium text-foreground">No wallets found.</p>
       {search ? (
         <p className="mt-1 text-sm">
-          Nothing matched <span className="font-semibold">“{search}”</span>.
+          Nothing matched <span className="font-semibold">“{search.slice(0, 12)}…”</span>
         </p>
       ) : (
         <p className="mt-1 text-sm">Try adjusting your filters.</p>

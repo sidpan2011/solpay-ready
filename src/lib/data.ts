@@ -24,6 +24,7 @@ export interface Wallet {
   tested_by?: string;
   verified?: boolean;
   evidence_paths?: string[];
+  url?: string;
 }
 
 interface WalletsJson {
@@ -74,6 +75,7 @@ function normalize(rec: any): Wallet {
     evidence_paths: Array.isArray(rec.evidence_paths)
       ? rec.evidence_paths
       : pipe(rec.evidence_paths),
+    url: emptyOrU(rec.url),
   } as Wallet;
 
   return w;

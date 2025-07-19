@@ -1,7 +1,7 @@
 "use client";
 import { Input } from "./ui/input";
 import { FiltersBar } from "./filters-bar";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiltersState } from "@/lib/filters";
 import { createDefaultFilters } from "@/lib/filters";
 import CardsGrid from "./cards-grid";
@@ -19,7 +19,7 @@ export default function Dashboard() {
     const [view, setView] = useState<"table" | "gallery">("gallery");
     const [search, setSearch] = useState<string>("");
     const filteredWallets = applyFilters(wallets, filters, search);
-    const hasFilters = 
+    const hasFilters =
         filters.status !== "all" ||
         filters.platforms.size > 0 ||
         filters.custody.size > 0 ||
@@ -30,17 +30,38 @@ export default function Dashboard() {
         setFilters(createDefaultFilters());
         setSearch("");
     }
+    const searchRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+          // Meta: ⌘ on macOS, Ctrl on Windows/Linux
+          const meta = e.metaKey || e.ctrlKey;
+          if (meta && e.key.toLowerCase() === "k") {
+            e.preventDefault();
+            searchRef.current?.focus();
+          }
+        };
+        window.addEventListener("keydown", onKey as any);
+        return () => window.removeEventListener("keydown", onKey as any);
+      }, []);
 
     return (
         <div className="p-4">
             <div className="sticky top-17 py-4 bg-background z-20">
-                <Input
-                    className="w-full focus-visible:ring-0 focus-visible:ring-offset-0"
-                    placeholder="Search wallets… e.g., Phantom, Coinbase"
-                    data-field="wallet_name"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
+                <div className="relative">
+                    <Input
+                        className="w-full focus-visible:ring-0 focus-visible:ring-offset-0"
+                        placeholder="Search wallets… e.g., Phantom, Coinbase"
+                        data-field="wallet_name"
+                        value={search}
+                        ref={searchRef}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <div className="text-muted-foreground pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-2">
+                        <kbd className="text-muted-foreground/70 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+                            ⌘K
+                        </kbd>
+                    </div>
+                </div>
                 <div className="mt-4">
                     <FiltersBar filters={filters} onChange={setFilters} />
                 </div>

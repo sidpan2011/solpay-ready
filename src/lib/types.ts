@@ -17,4 +17,8 @@ export interface Wallet {
   multi_chain?: boolean;
   tested_version?: string;
   tested_date?: string;
+  tested_by?: string;
+  verified?: boolean;
+  evidence_paths?: string[];
+  url?: string;
 }
