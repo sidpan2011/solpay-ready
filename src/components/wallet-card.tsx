@@ -7,12 +7,13 @@ import { StatusChip } from "./status-chip";
 // import { FeatureIconsRow } from "./feature-icons-row";
 import { formatShortDate } from "@/lib/formatting";
 import { platformShort } from "@/lib/labels";
-import { IconBell, IconCreditCard, IconPlus, IconQrcode, IconShare, IconStackFront, IconTransfer, IconUserCircle } from "@tabler/icons-react";
+import { IconBell, IconCreditCard, IconExternalLink, IconPlus, IconQrcode, IconShare, IconStackFront, IconTransfer, IconUserCircle } from "@tabler/icons-react";
 import { WalletIcon } from "./wallet-icon";
 import { CustodyBadge } from "./custody-badge";
 import { Dialog, DialogTitle, DialogHeader, DialogContent, DialogTrigger, DialogDescription, DialogFooter } from "./ui/dialog";
 import { cn } from "@/lib/utils";
-import { Check, Minus, X } from "lucide-react";
+import { ArrowUpRight, Check, Minus, X } from "lucide-react";
+import Link from "next/link";
 
 interface WalletCardProps {
     wallet: Wallet;
@@ -31,8 +32,13 @@ export function WalletCard({ wallet, onOpenDetails }: WalletCardProps) {
                 <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
                         <WalletIcon wallet={wallet} />
-                        <CardTitle className="truncate text-base font-semibold leading-tight">
+                        <CardTitle className="truncate text-base font-semibold leading-tight flex flex-col gap-1.5">
                             {wallet.wallet_name}
+                            {wallet.url && (
+                                <Link href={wallet.url} target="_blank" rel="noopener noreferrer" className="text-xs flex items-center font-normal text-muted-foreground hover:underline">
+                                    Visit Website <ArrowUpRight size={16} />
+                                </Link>
+                            )}
                         </CardTitle>
                     </div>
                     <div className="flex flex-col items-end gap-2">
@@ -81,7 +87,14 @@ export function WalletCard({ wallet, onOpenDetails }: WalletCardProps) {
                             <DialogHeader>
                                 <DialogTitle className="flex items-center gap-2">
                                     <WalletIcon wallet={wallet} />
-                                    {wallet.wallet_name}
+                                    <div className="flex flex-col gap-1.5">
+                                        {wallet.wallet_name}
+                                        {wallet.url && (
+                                            <Link href={wallet.url} target="_blank" rel="noopener noreferrer" className="text-xs flex items-center font-normal text-muted-foreground hover:underline">
+                                                Visit Website <ArrowUpRight size={16} />
+                                            </Link>
+                                        )}
+                                    </div>
                                 </DialogTitle>
 
                                 <DialogDescription asChild>
@@ -304,7 +317,7 @@ function evidenceUrl(p: string): string {
     // remove any leading ./ or public/
     let clean = p.trim().replace(/^\.?\/*/, "");        // drop leading ./ or /
     clean = clean.replace(/^public\//, "");             // drop public/
-    
+
     // Handle case-insensitive file extension matching
     // Phantom files have .PNG extension, backpack files have .png
     if (clean.toLowerCase().endsWith('.png')) {
@@ -316,7 +329,7 @@ function evidenceUrl(p: string): string {
         // For other files, use lowercase .png
         return `/${basePath}.png`;
     }
-    
+
     return "/" + clean;                                 // root-relative
 }
 

@@ -18,9 +18,10 @@ import { CustodyBadge } from "./custody-badge";
 // import { FeatureIconsRow } from "./feature-icons-row";
 import { formatShortDate } from "@/lib/formatting";
 import { platformShort } from "@/lib/labels";
-import { ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { WalletIcon } from "./wallet-icon";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type FeatureValue = "yes" | "partial" | "no" | "untested";
 
@@ -81,7 +82,14 @@ function WalletRow({ wallet, onOpenDetails }: WalletRowProps) {
             <TableCell className="py-3">
                 <div className="flex items-center gap-2">
                     <WalletIcon wallet={wallet} />
-                    <p className="text-sm font-medium">{wallet.wallet_name}</p>
+                    <div className="flex flex-col gap-1">
+                        <p className="text-sm font-medium">{wallet.wallet_name}</p>
+                        {wallet.url && (
+                            <Link href={wallet.url} target="_blank" rel="noopener noreferrer" className="text-xs flex items-center font-normal text-muted-foreground hover:underline">
+                                Visit Website <ArrowUpRight size={16} />
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </TableCell>
 

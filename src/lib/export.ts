@@ -34,6 +34,7 @@ export function walletsToCsv(
     "tested_by",
     "verified",
     "evidence_paths",
+    "url",
   ];
 
   const lines: string[] = [];
@@ -61,6 +62,7 @@ export function walletsToCsv(
       w.tested_by ?? "",
       boolStr(w.verified),
       (w.evidence_paths ?? []).join("|"),
+      w.url ?? "",
     ].map(csvEscape);
 
     lines.push(row.join(","));

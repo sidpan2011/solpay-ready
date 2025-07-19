@@ -1,13 +1,13 @@
 {
   "meta": {
     "counts": {
-      "partial": 5,
-      "yes": 4,
+      "yes": 5,
       "no": 7,
+      "partial": 4,
       "untested": 1
     },
     "total": 17,
-    "last_updated": "2025-07-17T21:05:55.350Z"
+    "last_updated": "2025-07-19T18:45:03.835Z"
   },
   "wallets": [
     {
@@ -24,7 +24,7 @@
         "firefox"
       ],
       "custody_model": "self",
-      "solana_pay_qr": "partial",
+      "solana_pay_qr": "yes",
       "solana_pay_notes": "QR works for SOL; limited token & invoice support. [DEX swap iOS]",
       "dex_swap": "yes",
       "nft_gallery": "yes",
@@ -40,7 +40,8 @@
       "evidence_paths": [
         "public/evidence/phantom/ios/swap-quote.png",
         "public/evidence/phantom/ios/swap-success.png"
-      ]
+      ],
+      "url": "https://phantom.app/"
     },
     {
       "wallet_name": "Solflare",
@@ -69,7 +70,8 @@
       "tested_date": "2025-07-10",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.solflare.com/"
     },
     {
       "wallet_name": "Backpack",
@@ -101,7 +103,8 @@
         "public/evidence/backpack/extension/stake-quote.png",
         "public/evidence/backpack/extension/stake-approve.png",
         "public/evidence/backpack/extension/stake-success.png"
-      ]
+      ],
+      "url": "https://backpack.app/"
     },
     {
       "wallet_name": "Jupiter Wallet",
@@ -128,7 +131,8 @@
       "tested_date": "2025-07-12",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://jup.ag/"
     },
     {
       "wallet_name": "Glow",
@@ -154,7 +158,8 @@
       "tested_date": "2025-07-11",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://glow.fun/"
     },
     {
       "wallet_name": "Bitget Wallet",
@@ -180,7 +185,8 @@
       "tested_date": "2025-07-12",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.bitget.com/"
     },
     {
       "wallet_name": "OKX Wallet",
@@ -208,7 +214,8 @@
       "tested_date": "2025-07-13",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.okx.com/"
     },
     {
       "wallet_name": "Decaf",
@@ -234,7 +241,8 @@
       "tested_date": "2025-07-11",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://decaf.app/"
     },
     {
       "wallet_name": "Para",
@@ -260,7 +268,8 @@
       "tested_date": "2025-07-15",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://para.xyz/"
     },
     {
       "wallet_name": "Exodus",
@@ -290,7 +299,8 @@
       "tested_date": "2025-07-14",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.exodus.com/"
     },
     {
       "wallet_name": "TokenPocket",
@@ -319,7 +329,8 @@
       "tested_date": "2025-07-15",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.tokenpocket.pro/"
     },
     {
       "wallet_name": "Coinbase Wallet",
@@ -348,7 +359,8 @@
       "tested_date": "2025-07-15",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.coinbase.com/"
     },
     {
       "wallet_name": "Trust Wallet",
@@ -372,7 +384,8 @@
       "multi_chain": true,
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://trustwallet.com/"
     },
     {
       "wallet_name": "Slope",
@@ -398,7 +411,8 @@
       "tested_date": "2025-07-13",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://slope.finance/"
     },
     {
       "wallet_name": "Tangem",
@@ -423,7 +437,8 @@
       "tested_date": "2025-07-15",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://tangem.com/"
     },
     {
       "wallet_name": "Ledger Live",
@@ -454,7 +469,8 @@
       "tested_date": "2025-07-15",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.ledger.com/"
     },
     {
       "wallet_name": "SafePal",
@@ -482,7 +498,8 @@
       "tested_date": "2025-07-15",
       "tested_by": "Community Notion",
       "verified": false,
-      "evidence_paths": []
+      "evidence_paths": [],
+      "url": "https://www.safepal.com/"
     }
   ]
 }

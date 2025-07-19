@@ -38,6 +38,7 @@ const wallets = records.map((r: any) => ({
   tested_by: r.tested_by?.trim() || undefined,
   verified: parseBool(r.verified) ?? false,
   evidence_paths: splitPipes(r.evidence_paths),
+  url: r.url?.trim() || undefined,
 }));
 
 const meta = {
